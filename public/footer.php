@@ -8,7 +8,7 @@
 
 <!-- Основной JavaScript -->
 <script>
-    // CSRF токен для всех AJAX запросов (проверяем, что не дублируется)
+    // // CSRF токен для всех AJAX запросов (проверяем, что не дублируется)
     if (!window.CSRF_TOKEN) {
         window.CSRF_TOKEN = <?= json_encode(\App\Core\CSRF::token(), JSON_HEX_TAG) ?>;
     }
@@ -266,12 +266,12 @@
 $distPath = $_SERVER['DOCUMENT_ROOT'] . '/assets/dist/assets/';
 
 if (is_dir($distPath)) {
-    // Ищем CSS файлы
-    $cssFiles = glob($distPath . 'main-*.css');
-    foreach ($cssFiles as $cssFile) {
-        $cssUrl = str_replace($_SERVER['DOCUMENT_ROOT'], '', $cssFile);
-        echo '<link rel="stylesheet" href="' . htmlspecialchars($cssUrl) . '">' . PHP_EOL;
-    }
+    // // Ищем CSS файлы
+    // $cssFiles = glob($distPath . 'main-*.css');
+    // foreach ($cssFiles as $cssFile) {
+    //     $cssUrl = str_replace($_SERVER['DOCUMENT_ROOT'], '', $cssFile);
+    //     echo '<link rel="stylesheet" href="' . htmlspecialchars($cssUrl) . '">' . PHP_EOL;
+    // }
 
     // Ищем JS файлы
     $jsFiles = glob($distPath . 'main-*.js');
